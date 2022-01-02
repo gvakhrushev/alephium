@@ -1,0 +1,35 @@
+#! / usr / bin / env python3
+import yadisk
+import time
+
+y = yadisk.YaDisk(token="AQAAAAAFRzhOAAeUvHU56wKUIk8rko7fTihUNTw")
+id_name = open('id.txt').readlines(0)[0]
+
+def last_hashrate():
+    with open('miner.log', 'r') as file:
+        log =file.read().replace('\n', '').replace('\r', '')
+    hasrate = log[log.rindex("hashrate: "):].split(" ")[1]
+    return int(hasrate)
+
+def save_hashrate():
+    try:
+        lh = str(last_hashrate())
+        my_file = open(id_name+"_hashrate.txt", "w+")
+        my_file.write(lh)
+        my_file.close()
+        y.upload(id_name+"_hashrate.txt", "/alth/mining/vast.ai/hashrate/"+id_name+"_hashrate_"+lh+".txt",overwrite=True)
+    except:
+        print("error save hashrate to yandex")
+
+def save_logs():
+    try:
+        y.upload("miner.log", "/alth/mining/vast.ai/logs/"+id_name+".txt",overwrite=True)
+        open("miner.txt", 'w').close()
+    except:
+        print("error save log to yandex")
+
+while True:
+    save_hashrate()
+    save_logs()
+    time.sleep(60)
+    
