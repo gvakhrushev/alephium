@@ -1,0 +1,9 @@
+
+{
+    "diff1TargetNumZero": 30,
+    "jobSize": 5,
+    "serverHost": "52.18.87.57",
+    "serverPort": 20032,
+    "proxyPort": 30032,
+    "addresses": ["1JBgqXjv5o9k4mZNqiTAQuZB9C5UWXHFc1ma7q4sdurFp","1qNf49QN8H9XHYZNMMz92vNbo5ahpXJHJwWQBkBPHp9y","1BCCBPZL2EfSHeqZDZEXQvkaPC5urZH6GFdgoMG5i6y8M","1Hmw9qKFb7ZLaXDq1FWoytMUzgAWPuWq2YuhqFAXoDQHJ"]
+}

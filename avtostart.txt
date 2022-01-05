@@ -1,0 +1,5 @@
+#!/bin/bash
+until ./alephium-0.5.4-cuda-miner-linux -p 30032 1>>miner.log 2>>error.log; do
+    echo "Miner crashed with exit code $?.  Respawning.." >> error.log
+    sleep 1
+done
